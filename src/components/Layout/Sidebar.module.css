@@ -1,0 +1,87 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background-color: var(--surface-color);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebarBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebarBackdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--text-color-darker);
+}
+
+.sidebarHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color-darker);
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+    color: var(--text-color);
+}
+
+.scrollContainer {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.clearButton {
+    background-color: var(--danger-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem; /* Add some space */
+}
+
+.clearButton:hover {
+    opacity: 0.8;
+}

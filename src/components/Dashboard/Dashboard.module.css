@@ -1,0 +1,63 @@
+.dashboard {
+    padding: 2rem;
+}
+
+.analysisGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.currencyCard {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 5px solid var(--primary-color);
+}
+
+.cardHeader {
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.statGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.stat {
+    background-color: #111;
+    padding: 0.8rem;
+    border-radius: 5px;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: var(--text-color-darker);
+    margin-bottom: 0.3rem;
+}
+
+.statValue {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.profit {
+    color: var(--success-color);
+}
+
+.loss {
+    color: var(--danger-color);
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
