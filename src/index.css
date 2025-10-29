@@ -1,15 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/*
+  PoE-inspired theme variables. Keep these at the top and reference them
+  across component styles for consistent theming. Tweak the gold and red
+  accents to taste.
+*/
 :root {
-  --primary-color: #B7791F;
-  --secondary-color: #6b2a0f;
-  --background-color: #0D0D0D;
-  --surface-color: #1A1A1A;
-  --text-color: #E0E0E0;
-  --text-color-darker: #A0A0A0;
+  /* Accent colors */
+  --primary-color: #B7791F; /* gold */
+  --secondary-color: #6b2a0f; /* deep rust */
+  --accent-glow: rgba(183,121,31,0.12);
+
+  /* Dark surfaces */
+  --background-color: #070707; /* near-black */
+  --surface-color: #0F0F10; /* elevated surface */
+  --panel-color: #131313; /* secondary panel */
+
+  /* Text */
+  --text-color: #E6E6E0; /* off-white */
+  --text-color-darker: #A8A39A;
+  --muted-color: #7a756f;
+
+  /* Status */
   --danger-color: #C53030;
   --success-color: #2F855A;
+
   --white-color: #FFFFFF;
+
+  /* Borders / shadows */
+  --edge: rgba(255,255,255,0.04);
+  --shadow-1: 0 6px 20px rgba(0,0,0,0.6);
+
+  /* Spacing / sizes */
+  --gutter: 1rem;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
 
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -29,6 +54,21 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Global element tweaks to better match PoE look */
+button {
+  font-family: inherit;
+}
+
+input, select, textarea {
+  background: var(--panel-color);
+  border: 1px solid var(--edge);
+  color: var(--text-color);
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
 }
 
 * {

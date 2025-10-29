@@ -1,5 +1,28 @@
 .dashboard {
     padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.welcome h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px var(--accent-glow);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.welcome p {
+    color: var(--text-color-darker);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .analysisGrid {
@@ -9,25 +32,53 @@
 }
 
 .currencyCard {
-    background-color: var(--surface-color);
-    border-radius: 8px;
+    background-color: var(--panel-color);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
-    border-left: 5px solid var(--primary-color);
+    border: 1px solid var(--edge);
+    position: relative;
+    overflow: hidden;
+    transition: all 200ms ease;
+}
+
+.currencyCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
 }
 
 .cardHeader {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .cardHeader h3 {
     color: var(--primary-color);
     margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cardHeader h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--edge), transparent);
 }
 
 .statGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .stat {

@@ -1,0 +1,81 @@
+
+.helpFloating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 4000;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .helpFloating {
+    display: block;
+  }
+}
+
+/* Icon-only style inspired by PoE UI elements */
+.button {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--panel-color);
+  border: 2px solid var(--edge);
+  box-shadow: var(--shadow-1);
+  color: var(--primary-color);
+  font-family: Poppins, sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.button::before {
+  content: '?';
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+}
+
+/* Tooltip estilo PoE */
+.tooltip {
+  position: absolute;
+  bottom: 70px;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--panel-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 200ms ease;
+  border: 1px solid var(--edge);
+  box-shadow: var(--shadow-1);
+}
+
+.button:hover .tooltip {
+  opacity: 1;
+  bottom: 78px;
+  border-color: var(--primary-color);
+}

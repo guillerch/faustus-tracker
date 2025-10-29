@@ -1,0 +1,69 @@
+.fabContainer {
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 3500; /* above sidebar and other UI */
+  display: none; /* shown only on small screens */
+}
+
+@media (max-width: 900px) {
+  .fabContainer {
+    display: block;
+  }
+}
+
+.fabButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--white-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+
+.actions {
+  position: absolute;
+  right: 0;
+  bottom: 76px; /* place above the FAB (fabButton height + gap)
+                   keeps actions vertically stacked above the + button */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* center align so buttons appear over the FAB */
+  transform-origin: bottom right;
+}
+
+.actionButton {
+  min-width: 120px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--surface-color), var(--surface-color));
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+}
+
+.label {
+  display: none; /* labels not needed when buttons include text */
+}
+
+.hidden {
+  display: none;
+}

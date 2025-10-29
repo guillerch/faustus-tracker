@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
 
     if (transactions.length === 0) {
         return (
-            <div className={styles.dashboard}>
+            <div id="dashboard" className={styles.dashboard}>
                 <div className={styles.welcomeMessage}>
                     <h2>Welcome to Faustus Tracker</h2>
                     <p>No confirmed transactions yet. Complete some trades to see your analysis.</p>
@@ -63,7 +63,7 @@ const Dashboard: React.FC = () => {
     }
 
     return (
-        <div className={styles.dashboard}>
+        <div id="dashboard" className={styles.dashboard}>
             <div className={styles.analysisGrid}>
                 {analysis.map(stats => (
                     <div key={stats.currency} className={styles.currencyCard}>

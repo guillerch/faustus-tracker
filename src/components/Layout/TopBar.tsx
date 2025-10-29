@@ -7,6 +7,7 @@ interface TopBarProps {
   onMenuClick: () => void; // For opening sidebar
   onNewTradeClick: () => void;
   onNewSingleClick: () => void;
+  onStartTour?: () => void;
 }
 
 export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, onNewTradeClick, onNewSingleClick }) => {
@@ -24,10 +25,10 @@ export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, onNewTradeClick, on
             </div>
 
             <div className={styles.centerControls}>
-                <button className={styles.actionButton} onClick={onNewTradeClick}>
+                <button id="new-trade-button" className={styles.actionButton} onClick={onNewTradeClick}>
                     New Trade
                 </button>
-                <button className={styles.actionButton} onClick={onNewSingleClick}>
+                <button id="new-single-button" className={styles.actionButton} onClick={onNewSingleClick}>
                     New Single
                 </button>
             </div>
@@ -41,12 +42,13 @@ export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, onNewTradeClick, on
                         Profit: {totalProfit.toFixed(0)}c
                     </div>
                 </div>
-                <button className={`${styles.actionButton} ${styles.historyButton}`} onClick={onMenuClick}>
+                <button id="history-button" className={`${styles.actionButton} ${styles.historyButton}`} onClick={onMenuClick}>
                     History
                 </button>
                 <button className={styles.menuButton} onClick={onMenuClick}>
                     &#9776;
                 </button>
+                {/* Help moved to a floating button on desktop to keep the top bar clean */}
             </div>
         </header>
     );
