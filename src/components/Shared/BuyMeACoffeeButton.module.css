@@ -1,0 +1,39 @@
+.floatingButton {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 4000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--panel-color);
+  color: var(--primary-color);
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--edge);
+  box-shadow: var(--shadow-1);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  transition: all 200ms ease;
+}
+
+.floatingButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--accent-glow);
+  border-color: var(--primary-color);
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  flex: 0 0 20px;
+}
+
+.label {
+  font-size: 0.95rem;
+  line-height: 1;
+}

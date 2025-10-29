@@ -4,9 +4,11 @@
   right: 0;
   width: 320px;
   height: 100%;
-  background-color: var(--surface-color);
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 1100;
+  background-color: var(--panel-color);
+  border-left: 1px solid var(--edge);
+  box-shadow: var(--shadow-1);
+  /* Ensure sidebar sits above floating buttons and overlays */
+  z-index: 7000;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   display: flex;
@@ -24,8 +26,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2px);
+  /* backdrop should be under the sidebar but above other UI */
+  z-index: 6950;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
