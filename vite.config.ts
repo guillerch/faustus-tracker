@@ -16,6 +16,7 @@ export default defineConfig({
 			".localhost",
 			".localdomain",
 			"host.docker.internal",
+			"faustus-tracker.netlify.app",
 		],
 	},
 });
